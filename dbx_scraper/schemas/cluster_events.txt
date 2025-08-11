@@ -1,0 +1,5 @@
+  account_id STRING COMMENT 'ID of the account where this cluster was created.',
+  workspace_id STRING COMMENT 'ID of the workspace where this cluster was created.',
+  cluster_id STRING COMMENT 'ID of the cluster for which this record is associated.',
+  timestamp TIMESTAMP COMMENT 'Timestamp of the event',
+  event_type STRING COMMENT '
