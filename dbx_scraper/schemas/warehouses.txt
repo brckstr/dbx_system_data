@@ -1,0 +1,13 @@
+  warehouse_id STRING COMMENT 'The ID of the SQL warehouse.',
+  workspace_id STRING COMMENT 'The ID of the workspace where the warehouse is deployed.',
+  account_id STRING COMMENT 'The ID of the Databricks account.',
+  warehouse_name STRING COMMENT 'The name of the SQL warehouse.',
+  warehouse_type STRING COMMENT 'The type of SQL warehouse. Possible values are CLASSIC, PRO, and SERVERLESS.',
+  warehouse_channel STRING COMMENT 'The channel of the SQL warehouse. Possible values are CURRENT and PREVIEW.',
+  warehouse_size STRING COMMENT 'The cluster size of the SQL warehouse. Possible values are 2X_SMALL, X_SMALL, SMALL, MEDIUM, LARGE, X_LARGE, 2X_LARGE, 3X_LARGE, and 4X_LARGE.',
+  min_clusters INT COMMENT 'The minimum number of clusters permitted.',
+  max_clusters INT COMMENT 'The maximum number of clusters permitted.',
+  auto_stop_minutes INT COMMENT 'The number of minutes before the SQL warehouse auto-stops due to inactivity.',
+  tags MAP<STRING, STRING> COMMENT 'Tags for the SQL warehouse.',
+  change_time TIMESTAMP COMMENT 'Timestamp of change to the SQL warehouse definition.',
+  delete_time TIMESTAMP COMMENT 'Timestamp of when the SQL warehouse was deleted. The value is null if the SQL warehouse is not deleted.'
