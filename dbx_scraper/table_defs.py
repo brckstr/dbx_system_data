@@ -33,8 +33,8 @@ table_defs = {
   },
   "warehouse_metrics": {
     "schema_file": "warehouse_metrics",
-    "checkpoint_cols": {"value":"event_time", "filters": ["workspace_id", "warehouse_id"]},
-    "cluster_cols": ["event_time", "workspace_id", "warehouse_id"],
-    "parser": WarehouseEvents
+    "checkpoint_cols": {"value":"timerange_end", "filters": ["workspace_id", "warehouse_id"]},
+    "cluster_cols": ["timerange_start", "workspace_id", "warehouse_id"],
+    "parser": WarehouseMetrics
   }
 }

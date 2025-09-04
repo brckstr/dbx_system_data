@@ -1,0 +1,9 @@
+  account_id STRING COMMENT 'ID of the account where this cluster was created.',
+  workspace_id STRING COMMENT 'ID of the workspace where this cluster was created.',
+  warehouse_id STRING COMMENT 'ID of the cluster for which this record is associated.',
+  warehouse_name STRING COMMENT 'The name of the SQL warehouse.',
+  timerange_start TIMESTAMP COMMENT 'Timestamp of the start of the metric window',
+  timerange_end TIMESTAMP COMMENT 'Timestamp of the end of the metric window',
+  max_running_slots INT COMMENT 'Maximum number of running queries during the time window',
+  max_queued_slots INT COMMENT 'Maximum number of queued queries during the time window',
+  throughput INT COMMENT 'Total number of queries executed during the time window'
