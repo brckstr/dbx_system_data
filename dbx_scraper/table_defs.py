@@ -24,5 +24,11 @@ table_defs = {
     "checkpoint_cols": {"value":"timestamp", "filters": ["workspace_id", "cluster_id"]},
     "cluster_cols": ["timestamp", "workspace_id", "cluster_id"],
     "parser": ClusterEvents
+  },
+  "warehouse_events": {
+    "schema_file": "warehouse_events",
+    "checkpoint_cols": {"value":"event_time", "filters": ["workspace_id", "warehouse_id"]},
+    "cluster_cols": ["event_time", "workspace_id", "warehouse_id"],
+    "parser": WarehouseEvents
   }
 }

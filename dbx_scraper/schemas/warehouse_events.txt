@@ -1,0 +1,6 @@
+  account_id STRING COMMENT 'ID of the account where this cluster was created.',
+  workspace_id STRING COMMENT 'ID of the workspace where this cluster was created.',
+  warehouse_id STRING COMMENT 'ID of the cluster for which this record is associated.',
+  event_time TIMESTAMP COMMENT 'Timestamp of the event',
+  event_type STRING COMMENT 'Type of the event',
+  cluster_count INT COMMENT 'Count of currently provisioned clusters'

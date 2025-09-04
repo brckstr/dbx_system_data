@@ -35,6 +35,8 @@ class DBXScraper(object):
         for row in checkpoint_data:
             scoped_object = checkpoint_object
             for f in self.checkpoint["filters"]:
+                if row[f] not in scoped_object:
+                    scoped_object[row[f]] = {}
                 scoped_object = scoped_object[row[f]]
             scoped_object["value"] = row["key"]
         return checkpoint_object
