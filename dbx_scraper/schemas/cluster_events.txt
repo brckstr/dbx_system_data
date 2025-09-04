@@ -2,4 +2,5 @@
   workspace_id STRING COMMENT 'ID of the workspace where this cluster was created.',
   cluster_id STRING COMMENT 'ID of the cluster for which this record is associated.',
   timestamp TIMESTAMP COMMENT 'Timestamp of the event',
-  event_type STRING COMMENT '
+  type STRING COMMENT 'Type of the event',
+  details STRING COMMENT 'JSON Object describing the details of the event'

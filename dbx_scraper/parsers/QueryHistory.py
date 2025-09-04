@@ -20,11 +20,11 @@ class QueryHistory(object):
   def execute(self):
     w = WorkspaceClient()
     workspace_id = w.get_workspace_id()
-    print(workspace_id)
-    if self.checkpoint:
+    if self.checkpoint.get(str(workspace_id), None):
+      chckpnt = self.checkpoint[str(workspace_id)]["value"]
       response = w.query_history.list(
         filter_by=sql.QueryFilter(
-          query_start_time_range=sql.TimeRange(start_time_ms=int(1000*self.checkpoint.timestamp()), end_time_ms=int(1000*time.time()))
+          query_start_time_range=sql.TimeRange(start_time_ms=int(1000*chckpnt.timestamp()), end_time_ms=int(1000*time.time()))
         ),
         include_metrics=True
       )
@@ -115,7 +115,6 @@ class QueryHistory(object):
       "executed_as_user_id": r.get("executed_as_user_id", None), 
       "executed_as": r.get("executed_as_user_name", None)
     }
-    print(row)
     self.rows.append(row)
     if len(self.rows) > 10000:
       self.update_target()

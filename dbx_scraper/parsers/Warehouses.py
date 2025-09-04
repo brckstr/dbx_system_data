@@ -2,6 +2,8 @@ from datetime import datetime
 import re
 import time
 
+from delta.tables import DeltaTable
+
 from databricks.sdk import WorkspaceClient
 from databricks.sdk.service import workspace
 from databricks.sdk.service import sql
@@ -51,10 +53,8 @@ class Warehouses(object):
   def update_target(self):
     if len(self.rows) > 0:
       df = self.spark.createDataFrame(self.rows, self.schema)
-      target = DeltaTable(self.target_table)
+      target = DeltaTable.forName(self.spark, self.target_table)
       target.alias("target").merge(
         df.alias("source"), "target.workspace_id = source.workspace_id AND target.warehouse_id = source.warehouse_id"
-      ).whenMatchedUpdateAll()
-      .whenNotMatchedInsertAll()
-      .execute()
+      ).whenMatchedUpdateAll().whenNotMatchedInsertAll().execute()
       self.rows = []
