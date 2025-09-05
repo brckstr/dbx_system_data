@@ -2,9 +2,10 @@
   workspace_id STRING COMMENT 'The ID of the workspace this job belongs to.',
   job_id STRING COMMENT 'The ID of the job. Only unique within a single workspace.',
   name STRING COMMENT 'The user-supplied name of the job.',
-  creator_id STRING COMMENT 'The ID of the principal who created the job.',
+  creator_user_name STRING COMMENT 'The ID of the principal who created the job.',
   tags MAP<STRING, STRING> COMMENT 'The user-supplied custom tags associated with this job.',
   run_as STRING COMMENT 'The ID of the user or service principal whose permissions are used for the job run.',
   change_time TIMESTAMP COMMENT 'The time when the job was last modified. Timezone recorded as +00:00 (UTC).',
   delete_time TIMESTAMP COMMENT 'The time when the job was deleted by the user. Timezone recorded as +00:00 (UTC).',
-  description STRING COMMENT 'The user-supplied description of the job. **Not populated for rows emitted before late August 2024.**')
+  description STRING COMMENT 'The user-supplied description of the job. **Not populated for rows emitted before late August 2024.**',
+  definition STRING COMMENT 'JSON object of the job definition'

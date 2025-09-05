@@ -36,5 +36,17 @@ table_defs = {
     "checkpoint_cols": {"value":"timerange_end", "filters": ["workspace_id", "warehouse_id"]},
     "cluster_cols": ["timerange_start", "workspace_id", "warehouse_id"],
     "parser": WarehouseMetrics
+  },
+  "jobs": {
+    "schema_file": "jobs",
+    "checkpoint_cols": {"value":"change_time", "filters": ["workspace_id", "job_id"]},
+    "cluster_cols": ["change_time", "workspace_id"],
+    "parser": Jobs
+  },
+  "job_tasks": {
+    "schema_file": "job_tasks",
+    "checkpoint_cols": {"value":"change_time", "filters": ["workspace_id", "job_id"]},
+    "cluster_cols": ["change_time", "workspace_id", "job_id"],
+    "parser": JobTasks
   }
 }
