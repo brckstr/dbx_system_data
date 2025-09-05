@@ -48,5 +48,17 @@ table_defs = {
     "checkpoint_cols": {"value":"change_time", "filters": ["workspace_id", "job_id"]},
     "cluster_cols": ["change_time", "workspace_id", "job_id"],
     "parser": JobTasks
+  },
+  "job_run_timeline": {
+    "schema_file": "job_run_timeline",
+    "checkpoint_cols": {"value":"period_start_time", "filters": ["workspace_id"]},
+    "cluster_cols": ["period_start_time", "workspace_id", "job_id"],
+    "parser": JobRuns
+  },
+  "job_run_task_timeline": {
+    "schema_file": "job_run_task_timeline",
+    "checkpoint_cols": {"value":"period_start_time", "filters": ["workspace_id"]},
+    "cluster_cols": ["period_start_time", "workspace_id", "job_id"],
+    "parser": JobRunTasks
   }
 }
