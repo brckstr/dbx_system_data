@@ -66,5 +66,11 @@ table_defs = {
     "checkpoint_cols": {"value":"user_id", "filters": ["workspace_id"]},
     "cluster_cols": ["workspace_id", "user_id"],
     "parser": Users
+  },
+"command_history": {
+    "schema_file": "command_history",
+    "checkpoint_cols": {"value":"event_time", "filters": ["account_id"]},
+    "cluster_cols": ["event_time", "workspace_id"],
+    "parser": CommandHistory
   }
 }
