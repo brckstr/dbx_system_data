@@ -1,0 +1,7 @@
+  user_id STRING COMMENT 'The ID of user.',
+  user_name STRING COMMENT 'The user name of the user.',
+  display_name STRING COMMENT 'The display name of the user.',
+  workspace_id STRING COMMENT 'The ID of the workspace where the warehouse is deployed.',
+  account_id STRING COMMENT 'The ID of the Databricks account.',
+  active BOOLEAN COMMENT 'Whether the user account marked as active.',
+  groups ARRAY<STRING> COMMENT 'Groups to which the user belongs.'

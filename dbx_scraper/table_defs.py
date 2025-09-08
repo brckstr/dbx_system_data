@@ -60,5 +60,11 @@ table_defs = {
     "checkpoint_cols": {"value":"period_start_time", "filters": ["workspace_id"]},
     "cluster_cols": ["period_start_time", "workspace_id", "job_id"],
     "parser": JobRunTasks
+  },
+"user_mapping": {
+    "schema_file": "users",
+    "checkpoint_cols": {"value":"user_id", "filters": ["workspace_id"]},
+    "cluster_cols": ["workspace_id", "user_id"],
+    "parser": Users
   }
 }
